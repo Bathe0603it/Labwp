@@ -1,0 +1,1 @@
+Hien thi noi dung cua 1 page khong co gi như là search và trả về không có kq nào.
