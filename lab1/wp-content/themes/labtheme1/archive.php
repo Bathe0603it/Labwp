@@ -1,1 +1,1 @@
-Tap tin khong bat buoc
+Tap tin khong bat buoc - luu thong tin luu tru
