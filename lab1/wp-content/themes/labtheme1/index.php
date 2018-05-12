@@ -1,14 +1,16 @@
 <?php
 	get_header(); 
 ?>
-Trang chủ nhé
-<?php dd(get_post_format()); ?>
+<p>File : index.php</p>
+<p></p>
 <?php if (have_posts()): ?>
 	<?php
 		while (have_posts()) {
 			the_post();
 			?>
-			<h1><a href="<?php echo the_permalink() ?>"><?php echo the_title(); ?></a></h1>
+			<?php
+				get_template_part( 'content', get_post_format() ); 
+			?>
 			<?php 	
 		} 
 	?>
@@ -22,10 +24,16 @@ Trang chủ nhé
 			'mid_size'	=> 2,	// so luong trang 2 ben
 			'end_size'	=> 1,	// so luong page nam cuoi cung cua phan trang page
 		);
-		echo paginate_links( $params ) 
+		// echo paginate_links( $params );	-- Phan trang su dung wp < 4.1
+		// posts_nav_link(  );	// -- Phan trang su dung wp phan trang nhanh > 4.1
+		// the_posts_pagination(  );	// -- Phan trang manh me cua wp
+
+		// next_posts_link();
+		the_posts_pagination();
+		// dd($wp_query->max_num_pages);
 	?>
 <?php else: ?>
-	<p>Not update article!</p>
+	<?php get_template_part( 'content-none' ) ?>
 <?php endif ?>
 <?php
 	get_footer(); 

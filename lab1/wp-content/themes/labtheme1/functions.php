@@ -128,3 +128,71 @@ if(!function_exists('lab1_menu')){
     }
 
 }
+
+if (!function_exists('lab1_thumbnail')) {
+	function lab1_thumbnail($size){
+		if (!is_single() and has_post_thumbnail() || has_post_format( 'image' )) {
+			echo '<div>
+			'.the_post_thumbnail($size).'
+			</div>';
+		}
+	}
+}
+
+if (!function_exists('lab1_item_header')) {
+	function lab1_item_header(){
+		if (is_single()) {
+			echo '<h1><a href="'.get_the_permalink().'" title="'.get_the_title().'">'.get_the_title().'</a></h1>';
+		}
+		else{
+			echo '<h2><a href="'.get_the_permalink().'" title="'.get_the_title().'">'.get_the_title().'</a></h2>';
+		}
+	}
+}
+
+if (!function_exists('lab1_item_meta')) {
+	function lab1_item_meta(){
+		if (!is_page()) {
+			echo '<section class="meta-post">
+			'.
+			get_the_author().
+			get_the_date().
+			get_the_category_list(',')
+			.'
+			</section>';
+			echo '<section>'.
+			comments_popup_link( 'leave a comment', 'one comment', '% comment', 'read_all_comment' )
+			.'</section>';
+		}
+	}
+}
+
+if (!function_exists('lab1_item_content')) {
+	function lab1_item_content(){
+		if (!is_single()) {
+			the_excerpt();	// Hien thi noi dung rut gon
+		}
+		else{
+			the_content();	// Hien thi full noi dung
+		}
+	}
+}
+
+/** Xu ly filter_hook voi doan rut gon noi dung **/
+if (!function_exists('lab1_readmore')) {
+	function lab1_readmore(){
+		return '<a class="read-more" href="'.get_permalink(get_the_ID()).'">[...'.__('read more', 'lab1').']</a>';
+	}
+	add_filter( 'excerpt_more', 'lab1_readmore' );
+}
+
+if (!function_exists('lab1_item_tag')) {
+	function lab1_item_tag(){
+		if (is_single()) {
+			if (has_tag()) {
+				the_tags( '', ', ','' );
+			}
+			
+		}
+	}
+}
