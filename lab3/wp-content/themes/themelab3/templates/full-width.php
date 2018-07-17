@@ -1,0 +1,1 @@
+Lam nhung trang khong co sidebar
