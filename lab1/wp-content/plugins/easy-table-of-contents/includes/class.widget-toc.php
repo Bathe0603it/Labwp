@@ -149,7 +149,7 @@ if ( ! class_exists( 'ezTOC_Widget' ) ) {
 			 * Ensure the ezTOC content filter is not applied when running `the_content` filter.
 			 */
 			remove_filter( 'the_content', array( 'ezTOC', 'the_content' ), 100 );
-			$content = apply_filters( 'the_content', $post->post_content );
+			$post->post_content = apply_filters( 'the_content', $post->post_content );
 			add_filter( 'the_content', array( 'ezTOC', 'the_content' ), 100 );
 
 			/**
@@ -161,7 +161,7 @@ if ( ! class_exists( 'ezTOC_Widget' ) ) {
 			extract( $args );
 
 			$title = apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base );
-			$items = ezTOC::extract_headings( $find, $replace, $content );
+			$items = ezTOC::extract_headings( $find, $replace, $post );
 
 			if ( FALSE !== strpos( $title, '%PAGE_TITLE%' ) || FALSE !== strpos( $title, '%PAGE_NAME%' ) ) {
 
@@ -242,7 +242,7 @@ if ( ! class_exists( 'ezTOC_Widget' ) ) {
 							<?php
 							if ( ezTOC_Option::get( 'visibility' ) ) {
 
-								echo '<a class="pull-right btn btn-xs btn-default ez-toc-toggle"><i class="glyphicon ez-toc-icon-toggle"></i></a>';
+								echo '<a class="ez-toc-pull-right ez-toc-btn ez-toc-btn-xs ez-toc-btn-default ez-toc-toggle"><i class="ez-toc-glyphicon ez-toc-icon-toggle"></i></a>';
 							}
 							?>
 
@@ -255,7 +255,7 @@ if ( ! class_exists( 'ezTOC_Widget' ) ) {
 					<?php
 				}
 
-				echo '<ul class="ez-toc-list">'. PHP_EOL . $items . '</ul>' . PHP_EOL;
+				echo '<nav><ul class="ez-toc-list">'. PHP_EOL . $items . '</ul></nav>' . PHP_EOL;
 
 				do_action( 'ez_toc_after_widget' );
 

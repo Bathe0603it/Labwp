@@ -2,10 +2,10 @@
 Contributors: shazahm1@hotmail.com
 Donate link: http://connections-pro.com/
 Tags: table of contents, toc
-Requires at least: 4.3
+Requires at least: 4.4
 Tested up to: 4.9
 Requires PHP: 5.3
-Stable tag: 1.6.1
+Stable tag: 1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -89,6 +89,28 @@ Easy Table Contents is a fork of the excellent [Table of Contents Plus](https://
 4. Activate the plugin on the Plugins admin page.
 
 == Changelog ==
+
+= 1.7 05/09/2018 =
+* NEW: Introduce the `ez_toc_shortcode` filter.
+* TWEAK: Fix notices due to late eligibility check. props unixtam
+* TWEAK: Tweak eligibility check to support the TOC widget.
+* TWEAK: Prefix a few CSS classes in order to prevent collisions with theme's and other plugins.
+* TWEAK: Avoid potential PHP notice in admin when saving the post by checking for nonce before validating it.
+* TWEAK: Using the shortcode now overrides global options.
+* TWEAK: `the_content()` now caches result of `is_eligible()`.
+* TWEAK: Refactor to pass the WP_Post object internally vs. accessing it via the `$wp_query->post` which may not in all cases exist.
+* TWEAK: Use `pre_replace()` to replace one or more spaces with an underscore.
+* TWEAK: Return original title in the `ez_toc_url_anchor_target` filter.
+* TWEAK: Strip `&nbsp;`, replacing it with a space character.
+* TWEAK: Minor tweaks to the in page URL creating.
+* TWEAK: Wrap TOC list in a nav element.
+* TWEAK: Init plugin on the `plugins_loaded` hook.
+* TWEAK: Tweak the minimum number of headers to 1.
+* BUG: The header options from the post meta should be used when building the TOC hierarchy, not the header options from the global settings.
+* BUG: Do not double escape field values.
+* BUG: Ensure Apostrophe / Single quote use in Exclude Headings work.
+* OTHER: Update CSS to include the newly prefixed classes.
+* DEV: Remove some commented out unused code.
 
 = 1.6.1 03/16/2018 =
 * TWEAK: Revert change made to allow HTML added via the `ez_toc_title` filter as it caused undesirable side effects.
@@ -243,4 +265,7 @@ Requires WordPress >= 4.4 and PHP >= 5.3. PHP version >= 7.1 recommended.
 Requires WordPress >= 4.4 and PHP >= 5.3. PHP version >= 7.1 recommended.
 
 = 1.6.1 =
+Requires WordPress >= 4.4 and PHP >= 5.3. PHP version >= 7.1 recommended.
+
+= 1.7 =
 Requires WordPress >= 4.4 and PHP >= 5.3. PHP version >= 7.1 recommended.
