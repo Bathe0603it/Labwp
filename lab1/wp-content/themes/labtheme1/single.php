@@ -28,7 +28,9 @@
 
 <!-- tao 1 list comment mac dinh -->
 <?php comments_template() ?>
-
+<?php
+	get_sidebar(); 
+?>
 <?php
 	get_footer(); 
 ?>

@@ -107,6 +107,9 @@ if(!function_exists('dd')){
 
 }
 
+/**
+* Hien thi menu tai vi tri duoc goi 
+**/
 if(!function_exists('lab1_menu')){
     function lab1_menu($param = array()){
         wp_nav_menu( array(
@@ -150,6 +153,11 @@ if (!function_exists('lab1_item_header')) {
 	}
 }
 
+/**
+*
+*	Lay thong tin cua 1 POST nhu author, date, category, ...
+*
+**/
 if (!function_exists('lab1_item_meta')) {
 	function lab1_item_meta(){
 		if (!is_page()) {
@@ -196,3 +204,19 @@ if (!function_exists('lab1_item_tag')) {
 		}
 	}
 }
+
+/**
+* Nhung style.css
+**/
+function lab1_style(){
+	// Them file style vao bo nho
+	wp_register_style( 'main-style', get_template_directory_uri().'/style.css', 'all', '1.0' );
+	// Goi file tu bo nho ra
+	wp_enqueue_style( 'main-style' );
+
+	// Them nhieu style chi can copy va dan them vao
+	wp_register_style( 'global-style', get_template_directory_uri().'/public/css/global-style.css', 'all', '1.0' );
+	// Goi file tu bo nho ra
+	wp_enqueue_style( 'global-style' );
+}
+add_action( 'wp_enqueue_scripts', 'lab1_style' );
