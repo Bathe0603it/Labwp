@@ -1,0 +1,1 @@
+Hien thi sidebar voi ham get_sidebar()
