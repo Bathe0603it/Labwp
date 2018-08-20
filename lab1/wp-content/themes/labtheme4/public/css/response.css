@@ -1,0 +1,127 @@
+@media screen and (max-width: 20000px) and (min-width: 1100px){
+	
+}
+
+@media only screen and (max-width: 1024px) {
+	
+}
+ 
+@media only screen and (max-width: 980px) {
+	
+}
+ 
+@media only screen and (max-width: 800px) {
+	
+}
+ 
+@media only screen and (max-width: 780px) {
+	
+}
+ 
+/*Ipad dọc(768 x 1024)*/
+@media only screen and (max-width: 768px) {
+	.topHead .addressOne{ font-size: 11px; }
+	.bodyHead{ display: none; }
+	.bottomHead{ display: none; }
+
+	.headMb{ padding: 20px 0px;text-align: center;border-bottom: 2px solid #ddd;box-shadow: 1px 0px 8px #ddd;margin-bottom: 15px;background: #fff;display: block;z-index: 501;width: 100%; }
+	.headMb ul{  }
+	.headMb ul li{ display: inline;float: left;padding: 0 20px;color: rgba(102,102,102,.85); }
+	.headMb ul li:nth-child(1){ width: 20%;text-align: left;font-size: 24px; }
+	.headMb ul li:nth-child(2){ width: 60%; }
+	.headMb ul li:nth-child(2) img{ max-height: 100px;height: 58px; }
+	.headMb ul li:nth-child(3){ width: 20%;text-align: right;font-size: 24px; }
+	.headMb .icoMenuMb{  }
+	.headMb .icoLogoMb{  }
+	.headMb .icoCartMb{  }
+	.headMb ul li a{ color: rgba(102,102,102,.85); }
+	.headMb{  }
+	.main-header{ margin: 0px;border-bottom: none; }
+	.fixedTopMb{ position: fixed;top: 0px;left: 0px;padding: 10px 0; }
+
+	.headMb .icoMenuMb{ margin-top: 15px; }
+	.headMb .icoCartMb{ margin-top: 15px; }
+}
+ 
+@media only screen and (max-width: 720px) {
+	
+}
+
+@media only screen and (max-width: 668px) {
+	
+}
+ 
+@media only screen and (max-width: 640px) {
+	
+}
+ 
+@media only screen and (max-width: 600px) {
+	
+}
+ 
+@media only screen and (max-width: 568px) {
+	
+}
+ 
+@media only screen and (max-width: 563px) {
+
+}
+ 
+@media only screen and (max-width: 549px) {
+ 
+}
+ 
+@media only screen and (max-width: 534px) {
+	
+}
+
+/*Tablet nhỏ(480 x 640)*/
+@media only screen and (max-width: 480px) {
+	.topHead .addressOne{ display: none; }
+	.searchHead .boxLeft{ width: 28%; }
+	.searchHead .boxCenter{ width: 72%; }
+	.headMb ul li:nth-child(2) img{ max-width: 100%;height: auto; }
+	.productsFeatureHome .leftContentMax{ padding: 100px 5px; }
+	.main-content .title_h1{ font-size: 18px; }
+}
+
+/*Iphone(480 x 640)*/
+@media only screen and (max-width: 435px) {
+	
+}
+
+/*Iphone(480 x 640)*/
+@media only screen and (max-width: 411px) {
+	
+}
+
+/*Iphone6(480 x 640)*/
+@media only screen and (max-width: 375px) {
+	
+}
+
+@media only screen and (max-width: 360px) {
+	
+}
+ 
+@media only screen and (max-width: 338px) {
+	
+}
+ 
+@media only screen and (max-width: 330px) {
+
+}
+
+/*Smart phone nhỏ iphone5*/
+@media only screen and (max-width: 320px) {
+	
+}
+
+@media only screen and (max-width: 306px) {
+	
+}
+
+/*Smart phone nhỏ*/
+@media only screen and (max-width: 240px) {
+	
+}
