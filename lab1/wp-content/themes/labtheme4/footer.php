@@ -5,5 +5,6 @@
                 <button type="button" class="btn btn-danger">Sign Up</button>
             </form>
         </footer><br>
+        <?php wp_footer(); ?>
     </body>
 </html>

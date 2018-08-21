@@ -12,11 +12,13 @@
 */
 define('THEME_URL', get_template_directory());	// Ham tra ve string thu muc template
 define('CORE', THEME_URL.'/core');
+define('LIB', THEME_URL.'/lib');
 
 /*
 @ Nhung file core/init.php
 */
 require_once(CORE.'/init.php');
+require_once(LIB.'/class-wp-bootstrap-navwalker.php');
 
 // Thiet lap chieu rong noi dung
 if (!isset($content_width)) {
@@ -132,6 +134,23 @@ if(!function_exists('lab4_menu')){
 
 }
 
+if(!function_exists('lab4_menu_bootstrap')){
+    function lab4_menu_bootstrap($param = array()){
+        wp_nav_menu( array(
+        	'menu' => $param['location'],
+                'depth'             => 2,
+                'container'         => 'div',
+                'container_class'   => 'navbar-collapse collapse',
+                'menu_class'        => 'nav navbar-nav',
+                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+			'walker' => new wp_bootstrap_navwalker(),
+
+		 	'theme_location'  => $param['location'],	// name menu theme
+		) ); 
+    }
+
+}
+
 /**
 * Nhung style.css
 **/
@@ -157,15 +176,15 @@ function lab4_style(){
 	);
 	// Add script js file
 	$arrScript = array(
-		'functions' => '/public/js/functions.js',
 		'jquery' => '/public/js/jquery-3.1.0/jquery-3.1.0.min.js',
 		'bootstrap' => '/public/plugins/bootstrap/js/bootstrap.min.js',
+		'functions' => '/public/js/functions.js',
 	);
 	foreach ($arrStyle as $key => $value) {
 		wp_enqueue_style( $key, get_template_directory_uri() . $value,false,'1.1','all');
 	}
 	foreach ($arrScript as $key => $value) {
-		wp_enqueue_script( $key, get_template_directory_uri() . '/js/script.js', array ( 'jquery' ), 1.1, true);
+		wp_enqueue_script( $key, get_theme_file_uri($value) , array ( 'jquery' ), 1.1, true);
 	}
 	
 }
