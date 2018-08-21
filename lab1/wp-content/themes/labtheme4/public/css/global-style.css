@@ -127,7 +127,10 @@ a{ text-decoration: none;    color: #337ab7;color: #334862; }
 .fixedTop{ position: fixed;top: -25px;left: 0px;z-index: 500; }
 
 /********************* desgin *****************/
+.post-thumbnail{  }
+.post-thumbnail img{ max-width: 100%;height: auto !important; }
 
+.panel-primary>.panel-heading a{ color: #fff; }
 
 
 

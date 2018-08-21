@@ -16,7 +16,7 @@
                         <!-- default -->
 
                         <?php
-                            get_template_part( 'content', get_post_format() ); 
+                            get_template_part( 'templates/content', get_post_format() ); 
                         ?>
 
                     <?php endwhile;?>
@@ -41,27 +41,6 @@
                 <?php else: ?>
                     <?php get_template_part( 'content-none' ) ?>
                 <?php endif ?>
-                <div class="col-sm-4">
-                    <div class="panel panel-primary">
-                        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="panel panel-danger">
-                        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="panel panel-success">
-                        <div class="panel-heading">BLACK FRIDAY DEAL</div>
-                        <div class="panel-body"><img src="https://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image"></div>
-                        <div class="panel-footer">Buy 50 mobiles and get a gift card</div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

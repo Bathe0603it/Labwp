@@ -190,4 +190,81 @@ function lab4_style(){
 }
 add_action( 'wp_enqueue_scripts', 'lab4_style' );
 
+/**
+ *
+ * Doan mo ta ngan trong bai viet
+ *
+ **/
+if(!function_exists('lab4_excerpt')){
+    function lab4_excerpt($class = 'entry-summary'){
+        $class = esc_attr( $class );	// Xoa bo cac thuoc tinh html truyen vao
+        // Doan hien thi noi dung rut gon
+        // 1 has_excerpt : post hien tai co doan noi dung rut gon k
+        // 2 is_search : co phai doan noi dung tim kiem k
+		if ( has_excerpt() || is_search() ) :
+		?>
+			<div class="<?php echo $class; ?>">
+				<?php the_excerpt(); ?>
+			</div><!-- .<?php echo $class; ?> -->
+		<?php
+		endif;
+    }
+
+}
+
+/**
+ *
+ * Thumpnail cho 1 so trang dac biet 
+ *
+ **/
+if(!function_exists('lab4_post_thumbnail')){
+    function lab4_post_thumbnail(){
+    	// !has_post_thumbnail() : Neu khong co anh thumbnail 
+        if ( is_attachment() || ! has_post_thumbnail() ) {
+			return;
+		}
+
+		if ( is_singular() ) :
+			?>
+			<div class="post-thumbnail">
+				<?php the_post_thumbnail(); ?>
+			</div><!-- .post-thumbnail -->
+
+			<?php else : ?>
+
+			<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+				<?php the_post_thumbnail( 'post-thumbnail', array( 'alt' => the_title_attribute( 'echo=0' ) ) ); ?>
+			</a>
+
+			<?php
+		endif; // End is_singular()
+    }
+
+}
+
+/**
+ *
+ * Thong tin mo ta va tac gia cua post 
+ *
+ **/
+if(!function_exists('lab4_entry_meta')){
+    function lab4_entry_meta(){
+    	// Co 5 loai tra ve cua get_post_type() : post | page | attachment | revision | nav_menu_item
+    	if ( 'post' === get_post_type() ) {
+			$author_avatar_size = apply_filters( 'twentysixteen_author_avatar_size', 49 );
+			echo '<section class="meta-post">
+			'.
+			get_the_author().
+			get_the_date().
+			get_the_category_list(',')
+			.'
+			</section>';
+			echo '<section>'.
+			comments_popup_link( 'leave a comment', 'one comment', '% comment', 'read_all_comment' )
+			.'</section>';
+		}
+    }
+
+}
+
 
