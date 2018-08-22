@@ -18,6 +18,8 @@
     <p><strong>Ey!</strong></p>
     People are looking at your profile. Find out who.
 </div>
-<p><a href="#">Link</a></p>
-<p><a href="#">Link</a></p>
-<p><a href="#">Link</a></p>
+<div class="well">
+    <?php if (is_active_sidebar( 'main-sidebar' )): ?>
+        <?php dynamic_sidebar( 'main-sidebar' ); ?>
+    <?php endif ?>
+</div>

@@ -80,9 +80,9 @@ if (!function_exists('lab4_theme_setup')) {
 			'after_title'	=> '</h3>',
 		);
 		$sidebar2 	= array(
-			'name'	=> __('Extend Sidebar', 'lab4'),
-			'id'	=> 'extend-sidebar',
-			'class'	=> 'extend-sidebar',
+			'name'	=> __('Bottom Sidebar', 'lab4'),
+			'id'	=> 'bottom-sidebar',
+			'class'	=> 'bottom-sidebar',
 			'before_widget'	=> '<li>',
 			'after_widget'	=> '</li>',
 			'before_title'	=> '<h3 class="sidebar">',
@@ -265,6 +265,19 @@ if(!function_exists('lab4_entry_meta')){
 		}
     }
 
+}
+
+/**
+ * Tag cua bai viet
+ **/
+if (!function_exists('lab4_item_tag')) {
+	function lab4_item_tag(){
+		if (is_single()) {
+			if (has_tag()) {
+				the_tags( '', ', ','' );
+			}
+		}
+	}
 }
 
 

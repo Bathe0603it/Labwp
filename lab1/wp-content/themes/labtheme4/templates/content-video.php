@@ -20,7 +20,6 @@
 	        </div>
 	        <div class="panel-footer">
 	        	<?php echo lab4_entry_meta(); ?>
-	        	<?php echo lab4_item_tag(); ?>
 	        </div>
 	    </div>
 	</section>
