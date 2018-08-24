@@ -280,4 +280,14 @@ if (!function_exists('lab4_item_tag')) {
 	}
 }
 
+/**
+ * Theme option redux demo
+ **/
+if (!function_exists('lab4_redux_demo')) {
+	function lab4_redux_demo($field){
+		global $redux_demo;
+		return $redux_demo[$field];
+	}
+}
+
 

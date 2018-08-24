@@ -27,8 +27,8 @@
 					        <div class="panel-body">
 					        	<?php echo the_content() ?>
 					        	<div class="contact-form">
-									<?php echo do_shortcode( '[contact-form-7 id="83" title="Contact form 1"]' ) ?>
-								</div>
+					<?php echo do_shortcode( '[contact-form-7 id="83" title="Contact form 1"]' ) ?>
+				</div>
 					        </div>
 					    </div>
 				    <?php endif ?>
