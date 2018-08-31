@@ -290,4 +290,39 @@ if (!function_exists('lab4_redux_demo')) {
 	}
 }
 
+/**
+ * Action hook test 1
+ **/
+if (!function_exists('lab4_add_action')) {
+	function lab4_add_action(){
+		echo 'hello';
+	}
+	add_action('lab4_do_action', 'lab4_add_action');
+}
+
+/**
+ * Action hook test 2
+ **/
+if (!function_exists('lab4_do_function_have_parameter')) {
+	function lab4_do_function_have_parameter($params){
+
+		echo '<br>do function prm-';
+		var_dump($params);
+		do_action('lab4_do_function_have_parameter', $params);
+
+	}
+	
+}
+
+if (!function_exists('lab4_add_function_have_parameter')) {
+	function lab4_function_have_parameter($param2){
+
+		echo '<br>add function prm-';
+		var_dump($param2[0]);
+
+	}
+	add_action('lab4_do_function_have_parameter', 'lab4_function_have_parameter');
+}
+
+
 
