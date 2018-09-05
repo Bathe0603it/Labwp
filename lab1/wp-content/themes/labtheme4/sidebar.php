@@ -14,3 +14,12 @@
         <?php dynamic_sidebar( 'main-sidebar' ); ?>
     <?php endif ?>
 </div>
+<!-- do action -->
+<div class="well">
+    <?php do_action('lab4_do_action'); ?>
+</div>
+
+<!-- do action 2 -->
+<div class="well">
+    <?php lab4_do_function_have_parameter([['id' => 1, 'name' => 'Bathepro'], ['id' => 2, 'name' => 'Batheit']]); ?>
+</div>
