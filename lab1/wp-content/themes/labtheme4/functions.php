@@ -290,4 +290,25 @@ if (!function_exists('lab4_redux_demo')) {
 	}
 }
 
+/**
+ * Action hook demo
+ **/
+if (!function_exists('lab4_action_hook_demo')) {
+	function lab4_action_hook_demo(){
+		echo 'hello';
+	}
+	add_action( 'wp_head', 'lab4_action_hook_demo' );
+}
+
+/**
+ * Theme option redux demo
+ **/
+if (!function_exists('lab4_hook_demo_pre_get_posts')) {
+	function lab4_hook_demo_pre_get_posts($a){
+		dd($a);
+		// $query->set( 'cat', '123' );
+	}
+	add_action( 'pre_get_posts', 'lab4_hook_demo_pre_get_posts' );
+}
+
 

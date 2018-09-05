@@ -45,6 +45,23 @@
         </div>
     </div>
 </div>
+<div class="alert alert-success text-center">
+    TEST
+</div>
+<div class="container">
+    <section class="jumbotron">
+        <?php
+            $args = array(
+                'meta_key' => 'lab4_second',
+                'meta_value' => 'two'
+            );
+            $lab4_query = new WP_Query($args);  
+            
+            dd($lab4_query->posts, 1);
+             
+        ?>
+    </section>
+</div>
 <br>
 <br><br>-
 <?php
